@@ -1,0 +1,32 @@
+{
+  "productList": [
+    {
+      "productName": "test",
+      "category": "Vegetables",
+      "freshness": "Brand New",
+      "price": 2500,
+      "comment": "test",
+      "date": "2022-07-31T00:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Mango",
+      "category": "Fruits",
+      "freshness": "Second Hand",
+      "price": 250,
+      "comment": "test",
+      "date": "2022-07-31T00:00:00.000Z",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

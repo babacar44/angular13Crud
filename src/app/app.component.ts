@@ -24,6 +24,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
       width: '30%'
+    }).afterClosed().subscribe(value => {
+      if (value === 'save'){
+        this.getAllProducts();
+      }
     });
   }
 
@@ -57,4 +61,27 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
+  editProduct(row:any){
+    this.dialog.open(DialogComponent, {
+      width: '30%',
+      data: row
+    }).afterClosed().subscribe(value => {
+      if (value === 'update'){
+        this.getAllProducts();
+      }
+    })
+  }
+
+
+  deleteProduct(id: number){
+    this.api.deleteProduct(id).subscribe({
+      next: (res) => {
+        alert("Product deleted Successfully");
+        this.getAllProducts();
+      },
+      error: (err) => {
+        alert("Error while updating the product");
+      }
+    })
+  }
 }
